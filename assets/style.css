@@ -1,0 +1,62 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.heading {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    text-align: center;
+    font-size: 3.8rem;
+}
+
+.student {
+    padding-bottom: 40px;
+    border-bottom: 1px solid #ddd;
+}
+
+.student__picture {
+    width: 100%;
+}
+
+.student__picture .student__img {
+    width: 160px;
+    height: 160px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: auto;
+}
+
+.student__information {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.student__information .name {
+    font-size: 2.5rem;
+}
+
+.student__information .student__list {
+    margin-left: 30px;
+}
+
+.student__information .student__list .student__list-item {
+    margin-bottom: 4px;
+    font-size: 1.6rem;
+}
+
+.options {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);    
+}

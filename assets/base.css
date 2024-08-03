@@ -1,0 +1,32 @@
+.show {
+    display: block !important;
+}
+
+.btn-change,
+.btn-remove,
+.btn-create,
+.btn-submit {
+    display: block;
+    margin: auto;
+    padding: 6px 14px;
+    font-size: 1.6rem;
+}
+
+.btn-create {
+    width: 200px;
+    margin-bottom: 40px;
+}
+
+.btn-submit {
+    margin-top: 20px;
+    width: 110px;
+    height: 40px;
+    font-size: 1.6rem;
+    color: #fff;
+}
+
+.btn-change,
+.btn-remove {
+    width: calc(100% - 30px);
+    margin-bottom: 15px;
+}

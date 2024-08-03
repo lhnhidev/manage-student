@@ -1,0 +1,25 @@
+{
+    "student": [
+        {
+            "id": 1,
+            "name": "Lê Hoàng Nhi",
+            "major": "Kỹ thuật phần mềm",
+            "cohort": 49,
+            "target": "Fullstack developer"
+        },
+        {
+            "id": 2,
+            "name": "Lê Minh Cảnh",
+            "major": "Công nghệ thực phẩm",
+            "cohort": 48,
+            "target": "Kỹ sinh công nghệ thực phẩm"
+        },
+        {
+            "id": 3,
+            "name": "Đỗ Thị Thanh Hà",
+            "major": "Công nghệ thông tin",
+            "cohort": 47,
+            "target": "Teser"
+        }
+    ]
+}

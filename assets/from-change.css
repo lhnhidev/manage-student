@@ -1,0 +1,228 @@
+.shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #4242424c;
+    display: none;
+    animation: theFade 1s ease-in-out;
+}
+
+.form-change {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+    max-width: 400px;
+    min-width: 380px;
+    background-color: red;
+    padding: 40px 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 18px;
+    background-color: #fff;
+    overflow: hidden;
+    animation: theShow 1s ease-in-out;
+}
+
+.theFadeOut {
+    animation: theFadeOut 1s ease-in-out !important;
+}
+
+.theShowOut {
+    animation: theShowOut 1s ease-in-out !important;
+}
+
+@keyframes theFade {
+    from { 
+        opacity: 0;
+    }
+    to { 
+        opacity: .1;
+    }
+    to {
+        opacity: .2;
+    }
+    to {
+        opacity: .3;
+    }
+    to {
+        opacity: .4;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes theFadeOut  {
+    form {
+        opacity: 1;
+    }
+    to {
+        opacity: .4;
+    }
+    to {
+        opacity: .3;
+    }
+    to {
+        opacity: .2;
+    }
+    to { 
+        opacity: .1;
+    }
+    to { 
+        opacity: 0;
+    }
+}
+
+@keyframes theShow {
+    from { 
+        min-height: 0px;
+        opacity: 0;
+        height: 8px;
+    }
+    to { 
+        min-height: 0px;
+        opacity: .1;
+        height: 64px;
+    }
+    to {
+        min-height: 0px;
+        opacity: .2;
+        height: 128px;
+    }
+    to {
+        min-height: 0px;
+        opacity: .3;
+        height: 192px;
+    }
+    to {
+        min-height: 0px;
+        opacity: .4;
+        height: 256px;
+    }
+    to {
+        opacity: 1;
+        min-height: 0px;
+        height: 320px;
+    }
+    to {
+        min-height: 0px;
+        height: 384px;
+    }
+    to {
+        min-height: 0px;
+        height: 448px;
+    }
+    to {
+        min-height: 0px;
+        height: 512px;
+    }
+    to {
+        min-height: 0px;
+        height: 580px;
+    }
+    to {
+        min-height: 0px;
+        height: 610px;
+    }
+    to {
+        min-height: 0px;
+        height: 646px;
+    }
+}
+
+form {
+    font-size: 1.6rem;
+}
+
+.form-change__title {
+    margin-bottom: 18px;
+    font-size: 3.2rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.form-change__times {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 3rem;
+    width: 46px;
+    height: 46px;
+    border-bottom-left-radius: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .3s;
+}
+
+.form-change__times:hover {
+    cursor: pointer;
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.form-change__times:active {
+    background-color: #be2f3d;
+}
+
+.form-group {
+    margin-bottom: 6px;
+}
+
+.form-change__img {
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 8px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.custom-file {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 190px;
+}
+
+.custom-file-input,
+.custom-file-label {
+    font-size: 1.3rem;
+}
+
+.form-label {
+    font-weight: 500;
+    font-size: 1.7rem;
+}
+
+.form-control {
+    padding: 8px 10px;
+    font-size: 1.6rem;
+    height: 34px;
+}
+
+.form-control:hover {
+    border-color: #007bff;
+}
+
+.form-age, .form-cohort {
+    display: inline-block;
+    margin-right: 30px;
+    margin-top: 10px;
+}
+
+.form-number {
+    margin-left: 10px;
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+}
+
+textarea {
+    resize: none;
+}

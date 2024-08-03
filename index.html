@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./assets/base.css">
+    <link rel="stylesheet" href="./assets/from-change.css">
+    <link rel="stylesheet" href="./assets/style.css">
+</head>
+<body>
+    
+    <header>
+        <div class="container">
+            <h2 class="heading">Phần mềm quản lý sinh viên</h2>
+            <button class="btn-create btn btn-primary" id="create">Thêm sinh viên</button>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <div class="student row" id="student">
+            <div class="col-xl-3 col-lg-4 col-md-4">
+                <div class="student__picture">
+                    <img src="https://img.thuthuatphanmem.vn/uploads/2018/09/20/anh-naruto-de-thuong_105002553.jpg" alt="" class="student__img" id="studentImage">
+                </div>
+            </div>  
+            <div class="col-xl-6 col-lg-5 col-md-5">
+                <div class="student__information" id="1">
+                    <h2 class="name" id="studentName">Lê Hoàng Nhi</h2>
+                    <ul class="student__list">
+                        <li class="student__list-item">
+                            <span class="student__info">Tuổi: </span>
+                            <p class="student__list-desc d-inline" id="studentAge">21</p>
+                        </li>
+                        <li class="student__list-item">
+                            <span class="student__info">Ngành học: </span>
+                            <p class="student__list-desc d-inline" id="studentMajor">Kỹ thuật phần mềm</p>
+                        </li>
+                        <li class="student__list-item">
+                            <span class="student__info">Khóa: </span>
+                            <p class="student__list-desc d-inline" id="studentCohort">49</p>
+                        </li>
+                        <li class="student__list-item">
+                            <span class="student__info">Mục tiêu khi ra trường: </span>
+                            <p class="student__list-desc d-inline" id="studentTarget">Fullstack developer</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-xl-2 col-lg-2 col-md-2">
+                <div class="options">
+                    <button class="btn-change btn btn-success" id="change">Chỉnh sửa</button>
+                    <button class="btn-remove btn btn-danger" id="remove">Xóa</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="shadow" id="shadow">
+        <div class="form-change" id="form">
+            <div class="form-change__header">
+                <div class="form-change__times" id="close">
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+                <h2 class="form-change__title">Chỉnh sửa thông tin</h2>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <img src="https://img.thuthuatphanmem.vn/uploads/2018/09/20/anh-naruto-de-thuong_105002553.jpg" alt="" class="form-change__img" id="formImage">
+                </div>
+    
+                <div class="col-12">
+                    <form>
+                        <div class="form-group">
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="customFile">
+                                <label class="custom-file-label" for="customFile">Chọn ảnh đại diện</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="form-label" for="formName">Họ và tên:</label>
+                          <input type="text" class="form-control" id="formName" value="">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="formMajor">Ngành học:</label>
+                            <input type="type" class="form-control" id="formMajor" value="">
+                        </div>
+                        <div class="form-group d-flex">
+                            <div class="form-age">
+                                <label class="form-label" for="formAge">Tuổi:</label>
+                                <input type="number" class="form-control form-number" id="formAge" value="">
+                            </div>
+                            <div class="form-cohort">
+                                <label class="form-label" for="formCohort">Khóa học:</label>
+                                <input type="number" class="form-control form-number" id="formCohort" value="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="formTarget">Mục tiêu khi ra trường:</label>
+                            <textarea class="form-control" id="formTarget"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <button class="btn-submit btn btn-primary" id="submit">Cập nhật</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script type="module" src="./script/home.js"></script>
+    <script type="module" src="./script/form-change.js"></script>
+</body>
+</html>
