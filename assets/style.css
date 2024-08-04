@@ -41,8 +41,9 @@ html {
 
 /* End Header  */
 
-
 .student {
+    /* position: relative; */
+    overflow: hidden;
     padding-top: 24px;
     padding-bottom: 24px;
     border-bottom: 1px solid #ddd;

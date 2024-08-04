@@ -1,8 +1,11 @@
-var student = document.querySelector('#student');
-var changeBtn = student.querySelector('#change-1');
-var removeBtn = student.querySelector('#remove-1');
+var students = document.querySelectorAll('.container .student');
 
-changeBtn.addEventListener('click', () => {
-    document.querySelector('#shadow').classList.add('show');
-    document.querySelector('body').style.overflow = 'hidden';
+students.forEach(student => {
+    var changeBtn = student.querySelector('.btn-change');
+    changeBtn.addEventListener('click', () => {
+        document.querySelector('#shadow').classList.add('show');
+        document.querySelector('body').style.overflow = 'hidden';
+    });
 });
+
+export { students };
