@@ -1,5 +1,5 @@
 .shadow {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -7,25 +7,19 @@
     background-color: #4242424c;
     display: none;
     animation: theFade 1s ease-in-out;
-    overflow: scroll;
-}
-
-body {
-    overflow: hidden;
 }
 
 .form-change {
     position: absolute;
-    top: 60%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 85%;
+    height: 85%;
     max-width: 1200px;
     min-width: 300px;
-    padding: 40px 50px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     border-radius: 18px;
-    background-color: #fff;
     overflow: hidden;
     animation: theShow 1s ease-in-out;
 }
@@ -38,7 +32,26 @@ body {
     animation: theShowOut 1s ease-in-out !important;
 }
 
-form {
+.form-change__header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #007BFF;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    box-shadow: rgba(33, 35, 38, 0.194) 0px 10px 20px -10px;
+    color: #fff;
+    z-index: 100;
+}
+
+.form-change__body {
+    background-color: #fff;
+    margin-top: 72px;
+    padding: 24px 24px 40px 24px;
+    height: 88%;
+    width: 100%;
+    overflow: auto;
     font-size: 1.6rem;
 }
 
@@ -57,8 +70,7 @@ form {
 }
 
 .form-change__title {
-    margin-bottom: 18px;
-    font-size: 3.2rem;
+    font-size: 4rem;
     font-weight: 700;
     text-align: center;
 }
@@ -79,14 +91,14 @@ form {
 }
 
 .form-change__img {
-    width: 110px;
-    height: 110px;
+    width: 140px;
+    height: 140px;
     object-fit: cover;
     border-radius: 50%;
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
@@ -99,6 +111,11 @@ form {
 .custom-file-input,
 .custom-file-label {
     font-size: 1.3rem;
+}
+
+.form-gender {
+    margin-left: 10px;
+    margin-top: 8px;
 }
 
 .form-label {
@@ -127,6 +144,24 @@ form {
     display: inline-block;
     width: 60px;
     height: 30px;
+}
+
+textarea.form-textarea {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    width: 100%;
+    height: calc(100% - 30px);
+    resize: none;
+}
+
+select.form-control {
+    padding: 0px 10px;
+}
+
+.form-change__box {
+    border-bottom: 1px solid #00000058;
+    padding-top: 15px;
+    padding-bottom: 5px;
 }
 
 textarea {

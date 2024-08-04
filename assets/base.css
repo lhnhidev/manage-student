@@ -5,7 +5,8 @@
 .btn-change,
 .btn-remove,
 .btn-create,
-.btn-submit {
+.btn-submit,
+.btn-fail {
     display: block;
     margin: auto;
     padding: 6px 14px;
@@ -17,9 +18,12 @@
     margin-bottom: 40px;
 }
 
-.btn-submit {
+.btn-submit,
+.btn-fail {
     margin-top: 20px;
-    width: 110px;
+    margin-left: 6px;
+    margin-right: 6px;
+    width: 150px;
     height: 40px;
     font-size: 1.6rem;
     color: #fff;
@@ -29,4 +33,12 @@
 .btn-remove {
     width: calc(100% - 30px);
     margin-bottom: 15px;
+}
+
+.border-right-1px {
+    border-right: 1px solid #00000058;
+}
+
+.margin-bottom-10px {
+    margin-bottom: 10px !important;
 }

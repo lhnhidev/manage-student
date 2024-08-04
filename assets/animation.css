@@ -44,55 +44,51 @@
     from { 
         min-height: 0px;
         opacity: 0;
-        height: 8px;
+        height: 6px;
     }
     to { 
         min-height: 0px;
         opacity: .1;
-        height: 64px;
+        height: 60px;
     }
     to {
         min-height: 0px;
         opacity: .2;
-        height: 128px;
+        height: 120px;
     }
     to {
         min-height: 0px;
         opacity: .3;
-        height: 192px;
+        height: 180px;
     }
     to {
         min-height: 0px;
         opacity: .4;
-        height: 256px;
+        height: 240px;
     }
     to {
         opacity: 1;
         min-height: 0px;
-        height: 320px;
+        height: 300px;
     }
     to {
         min-height: 0px;
-        height: 384px;
+        height: 360px;
     }
     to {
         min-height: 0px;
-        height: 448px;
+        height: 420px;
     }
     to {
         min-height: 0px;
-        height: 512px;
+        height: 480px;
     }
     to {
         min-height: 0px;
-        height: 580px;
+        height: 540px;
     }
     to {
         min-height: 0px;
-        height: 610px;
-    }
-    to {
-        min-height: 0px;
-        height: 646px;
+        height: 600px;
     }
 }
