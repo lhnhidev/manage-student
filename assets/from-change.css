@@ -7,18 +7,22 @@
     background-color: #4242424c;
     display: none;
     animation: theFade 1s ease-in-out;
+    overflow: scroll;
+}
+
+body {
+    overflow: hidden;
 }
 
 .form-change {
     position: absolute;
-    top: 50%;
+    top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 40%;
-    max-width: 400px;
-    min-width: 380px;
-    background-color: red;
-    padding: 40px 20px;
+    width: 85%;
+    max-width: 1200px;
+    min-width: 300px;
+    padding: 40px 50px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     border-radius: 18px;
     background-color: #fff;
@@ -34,107 +38,22 @@
     animation: theShowOut 1s ease-in-out !important;
 }
 
-@keyframes theFade {
-    from { 
-        opacity: 0;
-    }
-    to { 
-        opacity: .1;
-    }
-    to {
-        opacity: .2;
-    }
-    to {
-        opacity: .3;
-    }
-    to {
-        opacity: .4;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes theFadeOut  {
-    form {
-        opacity: 1;
-    }
-    to {
-        opacity: .4;
-    }
-    to {
-        opacity: .3;
-    }
-    to {
-        opacity: .2;
-    }
-    to { 
-        opacity: .1;
-    }
-    to { 
-        opacity: 0;
-    }
-}
-
-@keyframes theShow {
-    from { 
-        min-height: 0px;
-        opacity: 0;
-        height: 8px;
-    }
-    to { 
-        min-height: 0px;
-        opacity: .1;
-        height: 64px;
-    }
-    to {
-        min-height: 0px;
-        opacity: .2;
-        height: 128px;
-    }
-    to {
-        min-height: 0px;
-        opacity: .3;
-        height: 192px;
-    }
-    to {
-        min-height: 0px;
-        opacity: .4;
-        height: 256px;
-    }
-    to {
-        opacity: 1;
-        min-height: 0px;
-        height: 320px;
-    }
-    to {
-        min-height: 0px;
-        height: 384px;
-    }
-    to {
-        min-height: 0px;
-        height: 448px;
-    }
-    to {
-        min-height: 0px;
-        height: 512px;
-    }
-    to {
-        min-height: 0px;
-        height: 580px;
-    }
-    to {
-        min-height: 0px;
-        height: 610px;
-    }
-    to {
-        min-height: 0px;
-        height: 646px;
-    }
-}
-
 form {
     font-size: 1.6rem;
+}
+
+.form-change__times {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 3.4rem;
+    width: 50px;
+    height: 50px;
+    border-bottom-left-radius: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .3s;
 }
 
 .form-change__title {
@@ -144,19 +63,6 @@ form {
     text-align: center;
 }
 
-.form-change__times {
-    position: absolute;
-    top: 0;
-    right: 0;
-    font-size: 3rem;
-    width: 46px;
-    height: 46px;
-    border-bottom-left-radius: 18px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: .3s;
-}
 
 .form-change__times:hover {
     cursor: pointer;

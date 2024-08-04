@@ -9,12 +9,37 @@ html {
     font-family: Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.heading {
+
+/* Header  */
+.header__heading {
     padding-top: 25px;
     padding-bottom: 25px;
     text-align: center;
     font-size: 3.8rem;
 }
+
+.header__nav {
+    width: 600px;
+    margin: auto;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header__search {
+    width: calc(100% - 150px);
+    margin-right: 14px;
+    font-size: 1.6rem;
+    padding: 2px 10px;
+    border-radius: 2px;
+}
+
+.header__nav .btn-create {
+    margin: 0;
+}
+
+/* End Header  */
+
 
 .student {
     padding-bottom: 40px;

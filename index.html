@@ -6,16 +6,21 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./assets/animation.css">
     <link rel="stylesheet" href="./assets/base.css">
     <link rel="stylesheet" href="./assets/from-change.css">
     <link rel="stylesheet" href="./assets/style.css">
 </head>
 <body>
     
-    <header>
+    <header class="header">
         <div class="container">
-            <h2 class="heading">Phần mềm quản lý sinh viên</h2>
-            <button class="btn-create btn btn-primary" id="create">Thêm sinh viên</button>
+            <h2 class="header__heading">Phần mềm quản lý sinh viên</h2>
+
+            <div class="header__nav">
+                <input type="text" class="header__search" id="search" placeholder="Nhập mã số sinh viên tìm kiếm">
+                <button class="btn-create btn btn-primary" id="create">Thêm sinh viên</button>
+            </div>
         </div>
     </header>
 
@@ -32,8 +37,8 @@
                     <h2 class="name" id="studentName">Lê Hoàng Nhi</h2>
                     <ul class="student__list">
                         <li class="student__list-item">
-                            <span class="student__info">Tuổi: </span>
-                            <p class="student__list-desc d-inline" id="studentAge">21</p>
+                            <span class="student__info">Mã số sinh viên: </span>
+                            <p class="student__list-desc d-inline" id="studentId">B2303837</p>
                         </li>
                         <li class="student__list-item">
                             <span class="student__info">Ngành học: </span>
@@ -44,8 +49,151 @@
                             <p class="student__list-desc d-inline" id="studentCohort">49</p>
                         </li>
                         <li class="student__list-item">
-                            <span class="student__info">Mục tiêu khi ra trường: </span>
-                            <p class="student__list-desc d-inline" id="studentTarget">Fullstack developer</p>
+                            <a href="#" class="stydent__list-link" id="studentMore">Xem thêm...</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-xl-2 col-lg-2 col-md-2">
+                <div class="options">
+                    <button class="btn-change btn btn-success" id="change">Chỉnh sửa</button>
+                    <button class="btn-remove btn btn-danger" id="remove">Xóa</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="student row" id="student">
+            <div class="col-xl-3 col-lg-4 col-md-4">
+                <div class="student__picture">
+                    <img src="https://img.thuthuatphanmem.vn/uploads/2018/09/20/anh-naruto-de-thuong_105002553.jpg" alt="" class="student__img" id="studentImage">
+                </div>
+            </div>  
+            <div class="col-xl-6 col-lg-5 col-md-5">
+                <div class="student__information" id="1">
+                    <h2 class="name" id="studentName">Lê Hoàng Nhi</h2>
+                    <ul class="student__list">
+                        <li class="student__list-item">
+                            <span class="student__info">Mã số sinh viên: </span>
+                            <p class="student__list-desc d-inline" id="studentId">B2303837</p>
+                        </li>
+                        <li class="student__list-item">
+                            <span class="student__info">Ngành học: </span>
+                            <p class="student__list-desc d-inline" id="studentMajor">Kỹ thuật phần mềm</p>
+                        </li>
+                        <li class="student__list-item">
+                            <span class="student__info">Khóa: </span>
+                            <p class="student__list-desc d-inline" id="studentCohort">49</p>
+                        </li>
+                        <li class="student__list-item">
+                            <a href="#" class="stydent__list-link" id="studentMore">Xem thêm...</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-xl-2 col-lg-2 col-md-2">
+                <div class="options">
+                    <button class="btn-change btn btn-success" id="change">Chỉnh sửa</button>
+                    <button class="btn-remove btn btn-danger" id="remove">Xóa</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="student row" id="student">
+            <div class="col-xl-3 col-lg-4 col-md-4">
+                <div class="student__picture">
+                    <img src="https://img.thuthuatphanmem.vn/uploads/2018/09/20/anh-naruto-de-thuong_105002553.jpg" alt="" class="student__img" id="studentImage">
+                </div>
+            </div>  
+            <div class="col-xl-6 col-lg-5 col-md-5">
+                <div class="student__information" id="1">
+                    <h2 class="name" id="studentName">Lê Hoàng Nhi</h2>
+                    <ul class="student__list">
+                        <li class="student__list-item">
+                            <span class="student__info">Mã số sinh viên: </span>
+                            <p class="student__list-desc d-inline" id="studentId">B2303837</p>
+                        </li>
+                        <li class="student__list-item">
+                            <span class="student__info">Ngành học: </span>
+                            <p class="student__list-desc d-inline" id="studentMajor">Kỹ thuật phần mềm</p>
+                        </li>
+                        <li class="student__list-item">
+                            <span class="student__info">Khóa: </span>
+                            <p class="student__list-desc d-inline" id="studentCohort">49</p>
+                        </li>
+                        <li class="student__list-item">
+                            <a href="#" class="stydent__list-link" id="studentMore">Xem thêm...</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-xl-2 col-lg-2 col-md-2">
+                <div class="options">
+                    <button class="btn-change btn btn-success" id="change">Chỉnh sửa</button>
+                    <button class="btn-remove btn btn-danger" id="remove">Xóa</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="student row" id="student">
+            <div class="col-xl-3 col-lg-4 col-md-4">
+                <div class="student__picture">
+                    <img src="https://img.thuthuatphanmem.vn/uploads/2018/09/20/anh-naruto-de-thuong_105002553.jpg" alt="" class="student__img" id="studentImage">
+                </div>
+            </div>  
+            <div class="col-xl-6 col-lg-5 col-md-5">
+                <div class="student__information" id="1">
+                    <h2 class="name" id="studentName">Lê Hoàng Nhi</h2>
+                    <ul class="student__list">
+                        <li class="student__list-item">
+                            <span class="student__info">Mã số sinh viên: </span>
+                            <p class="student__list-desc d-inline" id="studentId">B2303837</p>
+                        </li>
+                        <li class="student__list-item">
+                            <span class="student__info">Ngành học: </span>
+                            <p class="student__list-desc d-inline" id="studentMajor">Kỹ thuật phần mềm</p>
+                        </li>
+                        <li class="student__list-item">
+                            <span class="student__info">Khóa: </span>
+                            <p class="student__list-desc d-inline" id="studentCohort">49</p>
+                        </li>
+                        <li class="student__list-item">
+                            <a href="#" class="stydent__list-link" id="studentMore">Xem thêm...</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-xl-2 col-lg-2 col-md-2">
+                <div class="options">
+                    <button class="btn-change btn btn-success" id="change">Chỉnh sửa</button>
+                    <button class="btn-remove btn btn-danger" id="remove">Xóa</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="student row" id="student">
+            <div class="col-xl-3 col-lg-4 col-md-4">
+                <div class="student__picture">
+                    <img src="https://img.thuthuatphanmem.vn/uploads/2018/09/20/anh-naruto-de-thuong_105002553.jpg" alt="" class="student__img" id="studentImage">
+                </div>
+            </div>  
+            <div class="col-xl-6 col-lg-5 col-md-5">
+                <div class="student__information" id="1">
+                    <h2 class="name" id="studentName">Lê Hoàng Nhi</h2>
+                    <ul class="student__list">
+                        <li class="student__list-item">
+                            <span class="student__info">Mã số sinh viên: </span>
+                            <p class="student__list-desc d-inline" id="studentId">B2303837</p>
+                        </li>
+                        <li class="student__list-item">
+                            <span class="student__info">Ngành học: </span>
+                            <p class="student__list-desc d-inline" id="studentMajor">Kỹ thuật phần mềm</p>
+                        </li>
+                        <li class="student__list-item">
+                            <span class="student__info">Khóa: </span>
+                            <p class="student__list-desc d-inline" id="studentCohort">49</p>
+                        </li>
+                        <li class="student__list-item">
+                            <a href="#" class="stydent__list-link" id="studentMore">Xem thêm...</a>
                         </li>
                     </ul>
                 </div>
@@ -67,13 +215,10 @@
                 </div>
                 <h2 class="form-change__title">Chỉnh sửa thông tin</h2>
             </div>
-            <div class="row">
-                <div class="col-12">
-                    <img src="https://img.thuthuatphanmem.vn/uploads/2018/09/20/anh-naruto-de-thuong_105002553.jpg" alt="" class="form-change__img" id="formImage">
-                </div>
-    
-                <div class="col-12">
-                    <form>
+            <form action="">
+                <div class="row">
+                    <div class="col-3">
+                        <img src="https://img.thuthuatphanmem.vn/uploads/2018/09/20/anh-naruto-de-thuong_105002553.jpg" alt="" class="form-change__img" id="formImage">
                         <div class="form-group">
                             <div class="custom-file">
                                 <input type="file" class="custom-file-input" id="customFile">
@@ -81,9 +226,44 @@
                             </div>
                         </div>
                         <div class="form-group">
-                          <label class="form-label" for="formName">Họ và tên:</label>
-                          <input type="text" class="form-control" id="formName" value="">
+                            <label class="form-label" for="formName">Họ và tên:</label>
+                            <input type="text" class="form-control" id="formName" value="">
                         </div>
+                        <div class="form-group">
+                            <label class="form-label" for="formId">Mã số sinh viên</label>
+                            <input type="text" class="form-control" id="formId" value="">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="formBirthday">Ngày sinh</label>
+                            <input type="date" class="form-control" id="formBirthday" value="">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="formGender">Giới tính</label>
+                            <select name="gender" id="formGender">
+                                <option value="male">Nam</option>
+                                <option value="female">Nữ</option>
+                                <option value="other">Khác</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="formClass">Lớp</label>
+                            <input type="type" class="form-control" id="formClass" value="">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="formMajor">Ngành học</label>
+                            <input type="type" class="form-control" id="formMajor" value="">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="formCohort">Khóa học</label>
+                            <input type="number" class="form-control" id="formCohort" value="">
+                        </div>
+                        <!-- <div class="form-group">
+                            <label class="form-label" for="formGroup">Khoa/Trường</label>
+                            <input type="text" class="form-control" id="formGroup" value="">
+                        </div> -->
+                    </div>
+        
+                    <div class="col-9">
                         <div class="form-group">
                             <label class="form-label" for="formMajor">Ngành học:</label>
                             <input type="type" class="form-control" id="formMajor" value="">
@@ -106,9 +286,9 @@
                         <div class="form-group">
                             <button class="btn-submit btn btn-primary" id="submit">Cập nhật</button>
                         </div>
-                    </form>
+                    </div>
                 </div>
-            </div>
+            </form>
         </div>
     </div>
     
