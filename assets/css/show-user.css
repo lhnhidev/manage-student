@@ -18,6 +18,16 @@ body {
     padding-right: 27px;
 }
 
+.user {
+    position: relative;
+    height: calc(100vh);
+}
+
+.user .user__basic,
+.user .user__main {
+    height: calc(100vh);
+}
+
 /* user basic  */
 .user__basic {
     background-color: #fff;

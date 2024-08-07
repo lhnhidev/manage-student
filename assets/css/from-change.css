@@ -28,10 +28,6 @@
     animation: theFadeOut 1s ease-in-out !important;
 }
 
-.theShowOut {
-    animation: theShowOut 1s ease-in-out !important;
-}
-
 .form-change__header {
     position: fixed;
     top: 0;
@@ -148,9 +144,8 @@
 
 textarea.form-textarea {
     margin-top: 15px;
-    margin-bottom: 15px;
     width: 100%;
-    height: calc(100% - 30px);
+    height: calc(100% - 15px);
     resize: none;
 }
 
