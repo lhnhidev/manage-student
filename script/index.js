@@ -53,13 +53,35 @@ var showMores = body.querySelectorAll('[id*=studentMore]');
 
 
 //show form-change 
-import { formElement, submitBtn, keys } from "./form-change.js";
-
+import { formElement, submitBtn } from "./form-change.js";
 
 var students = document.querySelectorAll('#body [id*=student-]');
 
+function renderForm (api) {
+    fetch (api)
+        .then (response => response.json())
+        .then (dataOfStudent => {
+            if (Array.isArray(dataOfStudent)) {
+                var dataOfStudent = dataOfStudent[0];
+            }
+            console.log(dataOfStudent);
+            for (var key in dataOfStudent) {
+                if (key != 'id') {
+                    switch (key) {
+                        case 'Image':
+                            formElement.querySelector(`#form${key}`).src = dataOfStudent[key];
+                            break;
+                        default :
+                            formElement.querySelector(`#form${key}`).value = dataOfStudent[key];
+                    }
+                }
+            }
+        })
+}
+
 [...students].forEach(student => {
     var changeBtn = student.querySelector('[id*=change-]');
+    var removeBtn = student.querySelector('[id*=remove-]');
     changeBtn.addEventListener('click', () => {
         formElement.querySelector('#heading').innerHTML = 'Chỉnh sửa thông tin'; //chuyen sang form change
         submitBtn.innerHTML = 'Cập nhật'; //chuyen sang form change 
@@ -67,26 +89,11 @@ var students = document.querySelectorAll('#body [id*=student-]');
         var idStudent = (changeBtn.id).replace('change-', '');
         var api = 'http://localhost:3000/student' + '?id=' + idStudent;
 
-        fetch (api)
-            .then (response => response.json())
-            .then (dataOfStudent => {
-                dataOfStudent = dataOfStudent[0];
-
-                for (var key in dataOfStudent) {
-                    if (key != 'id') {
-                        if (key == 'Image') {
-                            formElement.querySelector(`#form${key}`).src = dataOfStudent[key];
-                        }
-                        else {
-                            formElement.querySelector(`#form${key}`).value = dataOfStudent[key];
-                        }
-                    }
-                }
-            })
+        renderForm(api);
 
         document.querySelector('#shadow').classList.add('show');
         document.querySelector('body').style.overflow = 'hidden';
     });
 });
 
-export { students };
+export { students, renderForm };

@@ -2,7 +2,7 @@ import { students } from "./index.js";
 
 students.forEach(student => {
 
-  var removeBtn = student.querySelector('.btn-remove');
+  var removeBtn = student.querySelector('[id*=remove-]');
 
   removeBtn.addEventListener('click', () => {
       swal({
@@ -17,6 +17,12 @@ students.forEach(student => {
             swal("Hoàn thành! Dữ liệu của bạn đã được xóa", {
               icon: "success",
             });
+            // fetch ()
+            var idStudent = (student.id).replace('student-', '');
+            fetch ('http://localhost:3000/student' + `/${idStudent}`, {
+              method: 'DELETE'
+            })
+              .then (response => response.json());      
             student.parentElement.removeChild(student);
           }
         });
