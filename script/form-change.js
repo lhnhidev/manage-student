@@ -47,33 +47,32 @@ changeAvtBtn.addEventListener('change', () => {
 //End preview avatar
 
 // Updata information
-var keys = ['Image', 'Name', 'Id', 'Birthday', 'Gender', 'Class', 'Major', 'Cohort', 'Group', 'Religion', 'Ethnic', 'National', 'PaperBorn', 'AddressBorn', 'StateFamily', 'Train', 'Guild', 'Club', 'DayParty', 'PeopleId', 'DayPeopleId', 'AddressPeopleId', 'Email', 'Phone', 'Intro'];
+async function getForm() {
+    var keys = ['Image', 'Name', 'Id', 'Birthday', 'Gender', 'Class', 'Major', 'Cohort', 'Group', 'Religion', 'Ethnic', 'National', 'PaperBorn', 'AddressBorn', 'StateFamily', 'Train', 'Guild', 'Club', 'DayParty', 'PeopleId', 'DayPeopleId', 'AddressPeopleId', 'Email', 'Phone', 'Intro'];
+    
+    const promise = new Promise((resolve, reject) => {
+        resolve();
+    });
+    
+    var changeData = await promise
+        .then (() => {
+            var json = {};
+            submitBtn.addEventListener('click', function(event) {
+                event.preventDefault();
+                var usersInformation = form.querySelectorAll('[id*=form]');
+                usersInformation[0].value = previewImg.src;
+                var i = 0;
+                [...usersInformation].forEach(user => {
+                    // Đã lấy ra được thông tin update, chỉ cần up lên json
+                    json[keys[i++]] = user.value;
+                });
+            });        
+            return json;
+        })
+    
+    submitBtn.addEventListener('click', () => {
+        postFetch(changeData);
+    });
+}
 
-const promise = new Promise((resolve, reject) => {
-    resolve();
-});
-
-var changeData = await promise
-    .then (() => {
-        var json = {};
-        submitBtn.addEventListener('click', function(event) {
-            event.preventDefault();
-            var usersInformation = form.querySelectorAll('[id*=form]');
-            usersInformation[0].value = usersInformation[0].src;
-            var i = 0;
-            [...usersInformation].forEach(user => {
-                // Đã lấy ra được thông tin update, chỉ cần up lên json
-                json[keys[i++]] = user.value;
-                // console.log(keys[i++], user.value);
-            });
-        });        
-        return json;
-    })
-
-submitBtn.addEventListener('click', () => {
-    // console.log(changeData);/
-    console.log(changeData);
-    // postFetch(changeData);
-    // console.log(res);
-    // async function postFetch(options) {
-});
+export { formElement, failBtn, submitBtn, getForm };
