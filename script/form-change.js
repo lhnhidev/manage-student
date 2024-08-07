@@ -47,8 +47,8 @@ changeAvtBtn.addEventListener('change', () => {
 //End preview avatar
 
 // Updata information
+var keys = ['Image', 'Name', 'Id', 'Birthday', 'Gender', 'Class', 'Major', 'Cohort', 'Group', 'Religion', 'Ethnic', 'National', 'PaperBorn', 'AddressBorn', 'StateFamily', 'Train', 'Guild', 'Club', 'DayParty', 'PeopleId', 'DayPeopleId', 'AddressPeopleId', 'Email', 'Phone', 'Intro'];
 async function getForm() {
-    var keys = ['Image', 'Name', 'Id', 'Birthday', 'Gender', 'Class', 'Major', 'Cohort', 'Group', 'Religion', 'Ethnic', 'National', 'PaperBorn', 'AddressBorn', 'StateFamily', 'Train', 'Guild', 'Club', 'DayParty', 'PeopleId', 'DayPeopleId', 'AddressPeopleId', 'Email', 'Phone', 'Intro'];
     
     const promise = new Promise((resolve, reject) => {
         resolve();
@@ -75,4 +75,4 @@ async function getForm() {
     });
 }
 
-export { formElement, failBtn, submitBtn, getForm };
+export { formElement, failBtn, submitBtn, getForm, keys };

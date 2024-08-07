@@ -1,4 +1,4 @@
-import { students } from "./show-form-change.js";
+import { students } from "./index.js";
 
 students.forEach(student => {
 

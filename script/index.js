@@ -50,3 +50,43 @@ var showMores = body.querySelectorAll('[id*=studentMore]');
         window.open('../html/show-user.html', 'myWindow', "left=200,top=80,width=1100,height=640");
     });
 });
+
+
+//show form-change 
+import { formElement, submitBtn, keys } from "./form-change.js";
+
+
+var students = document.querySelectorAll('#body [id*=student-]');
+
+[...students].forEach(student => {
+    var changeBtn = student.querySelector('[id*=change-]');
+    changeBtn.addEventListener('click', () => {
+        formElement.querySelector('#heading').innerHTML = 'Chỉnh sửa thông tin'; //chuyen sang form change
+        submitBtn.innerHTML = 'Cập nhật'; //chuyen sang form change 
+
+        var idStudent = (changeBtn.id).replace('change-', '');
+        var api = 'http://localhost:3000/student' + '?id=' + idStudent;
+
+        fetch (api)
+            .then (response => response.json())
+            .then (dataOfStudent => {
+                dataOfStudent = dataOfStudent[0];
+
+                for (var key in dataOfStudent) {
+                    if (key != 'id') {
+                        if (key == 'Image') {
+                            formElement.querySelector(`#form${key}`).src = dataOfStudent[key];
+                        }
+                        else {
+                            formElement.querySelector(`#form${key}`).value = dataOfStudent[key];
+                        }
+                    }
+                }
+            })
+
+        document.querySelector('#shadow').classList.add('show');
+        document.querySelector('body').style.overflow = 'hidden';
+    });
+});
+
+export { students };
