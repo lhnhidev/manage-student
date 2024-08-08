@@ -12,6 +12,7 @@
 html {
     font-size: 70%;
     font-family: Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
 }
 
 .show {

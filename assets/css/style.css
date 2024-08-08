@@ -1,10 +1,23 @@
 /* Header  */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #ffffffa7;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 30px;
+    backdrop-filter: blur(5px);
+    z-index: 100;
+    transition: .6s ease-in-out;
+}
+
 .header__heading {
     padding-top: 25px;
     padding-bottom: 25px;
     text-align: center;
     font-size: 3.8rem;
     font-weight: 700;
+    transition: .6s;
 }
 
 .header__nav {
@@ -13,6 +26,7 @@
     margin-bottom: 30px;
     display: flex;
     justify-content: space-between;
+    transition: .6s;
 }
 
 .header__search {
@@ -27,7 +41,43 @@
     margin: 0;
 }
 
+.header__hidden {
+    background-color: #dddddd9d;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.6rem;
+    color: #469dfb;
+    right: 80px;
+    bottom: 0;
+    transition: .3s;
+}
+
+.header__hidden:hover {
+    cursor: pointer;
+    background-color: #469dfb;
+    color: #fff;
+}
+
+#iconHidden {
+    transition: .6s;
+}
+
 /* End Header  */
+
+#body {
+    margin-top: 177px;
+    transition: .6s ease-in-out;
+}
+
+#body.margin-top-96px {
+    margin-top: 85px !important ;
+}
 
 .student {
     /* position: relative; */
@@ -43,9 +93,10 @@
 
 .student__picture .student__img {
     width: 160px;
+    /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
     height: 160px;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     border-radius: 50%;
+    box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
     object-fit: cover;
     display: block;
     margin: auto;

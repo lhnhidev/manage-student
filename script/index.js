@@ -318,4 +318,46 @@ var idStudentMore = [];
 
 });
 
+var searchBtn = document.querySelector('#search');
+searchBtn.addEventListener('change', () => { 
+    var mssv = searchBtn.value;
+
+    fetch ('http://localhost:3000/student?Id=' + mssv)
+        .then (response => response.json())
+        .then (data => {
+            console.log(data);
+            if (data.length == 0) {
+                swal("Oops!", "Sinh viên bạn tìm không có trong hệ thống!");
+            }
+            else {
+                data = data[0];
+                var link = document.createElement('a');
+                link.href = `#${data.id}`;
+                link.click();
+            }
+        });
+});
+
+var hiddenBtn = document.querySelector('#header #hidden');
+
+hiddenBtn.addEventListener('click', () => {
+    var header = document.querySelector('#header');
+    var icon = hiddenBtn.querySelector('#iconHidden');
+    var body = document.querySelector('#body');
+
+
+    console.log(body);  
+    
+    if (header.classList.contains('scroll-up')) {
+        header.classList.remove('scroll-up');
+        icon.classList.remove('arrow-down');
+        body.classList.remove('margin-top-96px');
+    }
+    else {
+        header.classList.add('scroll-up');
+        icon.classList.add('arrow-down');
+        body.classList.add('margin-top-96px');
+    }
+});
+
 export { students, renderForm };

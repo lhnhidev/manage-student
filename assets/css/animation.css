@@ -92,3 +92,16 @@
         height: 600px;
     }
 }
+
+.scroll-up {
+    top: -118px !important;
+}
+
+.scroll-up .header__nav,
+.scroll-up .header__heading {
+    opacity: .0;
+}
+
+.arrow-down {
+    transform: rotate(-180deg);
+}

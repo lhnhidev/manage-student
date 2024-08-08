@@ -6,6 +6,7 @@
     bottom: 0;
     background-color: #4242424c;
     display: none;
+    z-index: 999;
     animation: theFade 1s ease-in-out;
 }
 
@@ -106,7 +107,7 @@
 
 .custom-file-input,
 .custom-file-label {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
 }
 
 .form-gender {
