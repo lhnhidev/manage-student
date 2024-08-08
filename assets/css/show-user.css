@@ -113,6 +113,21 @@ body {
     font-weight: 600;
 }
 
+p[id*="userIntro-"] {
+    padding: 8px 15px;
+    border: 1px solid #ddd;
+    margin-top: 15px;
+    margin-left: 0;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    height: fit-content;
+    min-height: 100%;
+}
+
+.user__main .user__text {
+    margin-bottom: 22px;
+}
+
 .user__main > .row {
     margin-top: 12px;
     margin-bottom: 12px;
