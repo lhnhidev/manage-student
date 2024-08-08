@@ -53,7 +53,7 @@ var showMores = body.querySelectorAll('[id*=studentMore]');
 
 
 //show form-change 
-import { formElement, submitBtn } from "./form-change.js";
+import { formElement, submitBtn, keys } from "./form-change.js";
 
 var students = document.querySelectorAll('#body [id*=student-]');
 
@@ -64,7 +64,7 @@ function renderForm (api) {
             if (Array.isArray(dataOfStudent)) {
                 var dataOfStudent = dataOfStudent[0];
             }
-            console.log(dataOfStudent);
+            // console.log(dataOfStudent);
             for (var key in dataOfStudent) {
                 if (key != 'id') {
                     switch (key) {
@@ -76,24 +76,50 @@ function renderForm (api) {
                     }
                 }
             }
-        })
+        });
 }
 
 [...students].forEach(student => {
     var changeBtn = student.querySelector('[id*=change-]');
-    var removeBtn = student.querySelector('[id*=remove-]');
+    // var removeBtn = student.querySelector('[id*=remove-]');
     changeBtn.addEventListener('click', () => {
         formElement.querySelector('#heading').innerHTML = 'Chỉnh sửa thông tin'; //chuyen sang form change
         submitBtn.innerHTML = 'Cập nhật'; //chuyen sang form change 
 
         var idStudent = (changeBtn.id).replace('change-', '');
         var api = 'http://localhost:3000/student' + '?id=' + idStudent;
+        var url = 'http://localhost:3000/student' + '/' + idStudent;
 
         renderForm(api);
 
         document.querySelector('#shadow').classList.add('show');
         document.querySelector('body').style.overflow = 'hidden';
+        
+
+        //Putch dữ liệu mới được cập nhật lên json
+
+        submitBtn.addEventListener('click', (event) => {
+            event.preventDefault();
+            var json = {};
+            var usersInformation = form.querySelectorAll('[id*=form]');
+            const previewImg = formElement.querySelector('#formImage');
+            usersInformation[0].value = previewImg.src;
+            var i = 0;
+            [...usersInformation].forEach(user => {
+                // Đã lấy ra được thông tin update, chỉ cần up lên json
+                json[keys[i++]] = user.value;
+            });
+
+            fetch(url, {
+                method: "PATCH",
+                body: JSON.stringify(json), //Đẩy vào thằng vừa nhận!
+                headers: {
+                    "Content-Type": "application/json"
+                },
+            });
+        });
     });
+
 });
 
 export { students, renderForm };

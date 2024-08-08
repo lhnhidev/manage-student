@@ -32,7 +32,6 @@ formElement.addEventListener('click', (event) => event.stopPropagation());
 const changeAvtBtn = formElement.querySelector('#customFile');
 const previewImg = formElement.querySelector('#formImage');
 const reader = new FileReader();
-var flag = false;
 
 changeAvtBtn.addEventListener('change', () => {
     const fileImg = changeAvtBtn.files[0];
@@ -40,7 +39,6 @@ changeAvtBtn.addEventListener('change', () => {
     reader.addEventListener('load', () => previewImg.src = reader.result);
 
     if (fileImg) {
-        flag = true;
         reader.readAsDataURL(fileImg);
     }
 });
@@ -50,7 +48,7 @@ changeAvtBtn.addEventListener('change', () => {
 var keys = ['Image', 'Name', 'Id', 'Birthday', 'Gender', 'Class', 'Major', 'Cohort', 'Group', 'Religion', 'Ethnic', 'National', 'PaperBorn', 'AddressBorn', 'StateFamily', 'Train', 'Guild', 'Club', 'DayParty', 'PeopleId', 'DayPeopleId', 'AddressPeopleId', 'Email', 'Phone', 'Intro'];
 async function getForm() {
     
-    const promise = new Promise((resolve, reject) => {
+    const promise = new Promise((resolve) => {
         resolve();
     });
     
@@ -70,9 +68,15 @@ async function getForm() {
             return json;
         })
     
-    submitBtn.addEventListener('click', () => {
+    var myFucntion = function () {
         postFetch(changeData);
-    });
+    }
+
+    submitBtn.addEventListener('click', myFucntion);
+
+    failBtn.addEventListener('click', () => submitBtn.removeEventListener('click', myFucntion));
+    closeBtn.addEventListener('click', () => submitBtn.removeEventListener('click', myFucntion));
+    shadow.addEventListener('click', () => submitBtn.removeEventListener('click', myFucntion));
 }
 
-export { formElement, failBtn, submitBtn, getForm, keys };
+export { formElement, failBtn, getForm, submitBtn, keys };
