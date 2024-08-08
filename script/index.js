@@ -53,7 +53,7 @@ var showMores = body.querySelectorAll('[id*=studentMore]');
 
 
 //show form-change 
-import { formElement, submitBtn, keys } from "./form-change.js";
+import { formElement, submitBtn, keys, failBtn, closeBtn, shadow } from "./form-change.js";
 
 var students = document.querySelectorAll('#body [id*=student-]');
 
@@ -95,10 +95,8 @@ function renderForm (api) {
         document.querySelector('#shadow').classList.add('show');
         document.querySelector('body').style.overflow = 'hidden';
         
-
         //Putch dữ liệu mới được cập nhật lên json
-
-        submitBtn.addEventListener('click', (event) => {
+        var myFunction = function (event) {
             event.preventDefault();
             var json = {};
             var usersInformation = form.querySelectorAll('[id*=form]');
@@ -109,7 +107,7 @@ function renderForm (api) {
                 // Đã lấy ra được thông tin update, chỉ cần up lên json
                 json[keys[i++]] = user.value;
             });
-
+    
             fetch(url, {
                 method: "PATCH",
                 body: JSON.stringify(json), //Đẩy vào thằng vừa nhận!
@@ -117,7 +115,13 @@ function renderForm (api) {
                     "Content-Type": "application/json"
                 },
             });
-        });
+        }
+
+        submitBtn.addEventListener('click', myFunction);
+
+        failBtn.addEventListener('click', () => submitBtn.removeEventListener('click', myFunction));
+        closeBtn.addEventListener('click', () => submitBtn.removeEventListener('click', myFunction));
+        shadow.addEventListener('click', () => submitBtn.removeEventListener('click', myFunction));
     });
 
 });

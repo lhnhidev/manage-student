@@ -79,4 +79,4 @@ async function getForm() {
     shadow.addEventListener('click', () => submitBtn.removeEventListener('click', myFucntion));
 }
 
-export { formElement, failBtn, getForm, submitBtn, keys };
+export { formElement, failBtn, getForm, submitBtn, keys, closeBtn, shadow };
